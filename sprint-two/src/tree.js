@@ -12,9 +12,7 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
-  var child = {};
-  child.value = value;
-  child.children = [];
+  var child = new Tree(value);
   this.children.push(child);
 };
 
@@ -28,9 +26,9 @@ treeMethods.contains = function(target) {
         check(el);
       })
     }
-    return inside;
   };
   check(this);
+  return inside;
 };
 
 
